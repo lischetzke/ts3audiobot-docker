@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  ts3audiobot:
+    container_name: ts3audiobot
+    image: "ts3audiobot:latest"
+    privileged: true
+    restart: unless-stopped
+    ports:
+      - "58913:58913"
+    volumes:
+      - /opt/ts3audiobot/ts3audiobot.toml:/opt/TS3AudioBot/ts3audiobot.toml
+      - /opt/ts3audiobot/rights.toml:/opt/TS3AudioBot/rights.toml
+      - /opt/ts3audiobot/bots:/opt/TS3AudioBot/bots
+      - /opt/ts3audiobot/plugins:/opt/TS3AudioBot/plugins
+      - /opt/ts3audiobot/database:/opt/TS3AudioBot/db
